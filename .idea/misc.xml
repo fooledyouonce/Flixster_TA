@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/kalho/OneDrive/Desktop/personal/Programming/Apps/Flixster_TA/app/src/main/res/drawable-v24/placeholdeer_foreground.xml" value="0.22864583333333333" />
+        <entry key="..\:/Users/kalho/OneDrive/Desktop/personal/Programming/Apps/Flixster_TA/app/src/main/res/drawable-v24/placeholder_foreground.xml" value="0.22864583333333333" />
+        <entry key="..\:/Users/kalho/OneDrive/Desktop/personal/Programming/Apps/Flixster_TA/app/src/main/res/drawable/placeholder.xml" value="0.22864583333333333" />
+        <entry key="..\:/Users/kalho/OneDrive/Desktop/personal/Programming/Apps/Flixster_TA/app/src/main/res/layout/activity_detail.xml" value="0.33" />
+        <entry key="..\:/Users/kalho/OneDrive/Desktop/personal/Programming/Apps/Flixster_TA/app/src/main/res/layout/activity_main.xml" value="0.2125" />
+        <entry key="..\:/Users/kalho/OneDrive/Desktop/personal/Programming/Apps/Flixster_TA/app/src/main/res/layout/item_movie.xml" value="0.5" />
+        <entry key="..\:/Users/kalho/OneDrive/Desktop/personal/Programming/Apps/Flixster_TA/app/src/main/res/mipmap-anydpi-v26/ic_banner.xml" value="0.11822916666666666" />
+        <entry key="..\:/Users/kalho/OneDrive/Desktop/personal/Programming/Apps/Flixster_TA/app/src/main/res/mipmap-anydpi-v26/placeholdeer.xml" value="0.22864583333333333" />
+        <entry key="..\:/Users/kalho/OneDrive/Desktop/personal/Programming/Apps/Flixster_TA/app/src/main/res/mipmap-anydpi-v26/placeholder.xml" value="0.22864583333333333" />
         <entry key="..\:/personal - TUF/CS/CS - Personal/Flixster_TA/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.290625" />
         <entry key="..\:/personal - TUF/CS/CS - Personal/Flixster_TA/app/src/main/res/drawable-v24/placeholder_foreground.xml" value="0.290625" />
         <entry key="..\:/personal - TUF/CS/CS - Personal/Flixster_TA/app/src/main/res/drawable/imagenotfound.xml" value="0.290625" />
