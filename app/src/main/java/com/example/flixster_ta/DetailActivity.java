@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import com.example.flixster_ta.databinding.ActivityDetailBinding;
 import com.example.flixster_ta.models.Movie;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -37,11 +39,20 @@ public class DetailActivity extends YouTubeBaseActivity {
     TextView tvOverview;
     RatingBar ratingBar;
     YouTubePlayerView youTubePlayerView;
+    private ActivityDetailBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+
+        //view binding
+        binding = ActivityDetailBinding.inflate(getLayoutInflater());
+
+        //layout of activity is stored in a special property called root
+        View view = binding.getRoot();
+        setContentView(view);
+
+        //setContentView(R.layout.activity_detail);
 
         tvTitle = findViewById(R.id.tvTitle2);
         tvOverview = findViewById(R.id.tvOverview2);

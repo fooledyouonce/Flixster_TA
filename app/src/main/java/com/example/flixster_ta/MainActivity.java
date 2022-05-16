@@ -6,10 +6,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.flixster_ta.adapters.MovieAdapter;
+import com.example.flixster_ta.databinding.ActivityMainBinding;
 import com.example.flixster_ta.models.Movie;
 
 import org.json.JSONArray;
@@ -30,11 +32,20 @@ public class MainActivity extends AppCompatActivity {
     public static final String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=adc6e3adbc2a696de289251ea3a7da96";
     public static final String TAG = "MainActivity";
     List<Movie> movies;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        //view binding
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+
+        //layout of activity is stored in a special property called root
+        View view = binding.getRoot();
+        setContentView(view);
+
+        //setContentView(R.layout.activity_main);
         RecyclerView rvMovies = findViewById(R.id.rvMovies);
         movies = new ArrayList<>();
 
