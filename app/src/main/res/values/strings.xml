@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Flixster</string>
     <color name="lightblue">#c0dfed</color>
+    <color name="grey">#737574</color>
 </resources>
