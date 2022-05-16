@@ -36,7 +36,7 @@ GIF created with [Kap](https://getkap.co/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+N/A
 
 ## Open-source libraries used
 
