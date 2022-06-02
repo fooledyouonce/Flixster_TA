@@ -1,5 +1,6 @@
 package com.example.flixster_ta;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,6 +40,7 @@ public class DetailActivity extends YouTubeBaseActivity {
     YouTubePlayerView youTubePlayerView;
     private ActivityDetailBinding binding;
 
+    @SuppressLint("DefaultLocale")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,15 +52,10 @@ public class DetailActivity extends YouTubeBaseActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        //setContentView(R.layout.activity_detail);
-
         tvTitle = findViewById(R.id.tvTitle2);
         tvOverview = findViewById(R.id.tvOverview2);
         ratingBar = findViewById(R.id.ratingBar);
         youTubePlayerView = findViewById(R.id.player);
-
-        //more tedious method
-        //String title = getIntent().getStringExtra("title");
 
         //efficient method
         Movie movie = Parcels.unwrap(getIntent().getParcelableExtra("movie"));
@@ -72,20 +69,15 @@ public class DetailActivity extends YouTubeBaseActivity {
             public void onSuccess(int statusCode, Headers headers, JSON json) {
                 try {
                     JSONArray results = json.jsonObject.getJSONArray("results");
-                    if (results.length() == 0){
-                        return;
-                    }
+                    if (results.length() == 0){ return; }
                     String youtubeKey = results.getJSONObject(0).getString("key");
                     Log.d("DetailActivity", youtubeKey);
                     initializeYoutube(youtubeKey);
-                } catch (JSONException e) {
-                    Log.e("DetailActivity", "Failed to parse JSON data", e);
-                }
+                } catch (JSONException e) { Log.e("DetailActivity", "Failed to parse JSON data", e); }
             }
-            @Override
-            public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
 
-            }
+            @Override
+            public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {}
         });
     }
     private void initializeYoutube(String youtubeKey) {
@@ -95,6 +87,7 @@ public class DetailActivity extends YouTubeBaseActivity {
                 Log.d("DetailActivity", "onInitializationSuccess");
                 youTubePlayer.cueVideo(youtubeKey);
             }
+
             @Override
             public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
                 Log.d("DetailActivity", "onInitializationFailure");

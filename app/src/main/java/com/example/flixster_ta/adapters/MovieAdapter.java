@@ -34,6 +34,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         this.context = context;
         this.movies = movies;
     }
+
     //involves inflating a layout from XML and returning the holder
     @NonNull
     @Override
@@ -42,6 +43,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         View movieView = LayoutInflater.from(context).inflate(R.layout.item_movie, parent, false);
         return new ViewHolder(movieView);
     }
+
     //involves populating data into the item through holder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
@@ -51,11 +53,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         //bind the movie data into VH
         holder.bind(movie);
     }
+
     //return total count of items in list
     @Override
     public int getItemCount() {
         return movies.size();
     }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         RelativeLayout container;
@@ -70,16 +74,15 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             tvOverview = itemView.findViewById(R.id.tvOverview);
             ivPoster = itemView.findViewById(R.id.ivPoster);
         }
+
         public void bind(Movie movie) {
             tvTitle.setText(movie.getTitle());
             tvOverview.setText(movie.getOverview());
             String imgURL;
 
-            if(context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                imgURL = movie.getBackdropPath();
-            } else {
-                imgURL = movie.getPosterPath();
-            }
+            if(context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) { imgURL = movie.getBackdropPath(); }
+            else { imgURL = movie.getPosterPath(); }
+
             int radius = 80; // corner radius, higher value = more rounded
             int margin = 0; // crop margin, set to 0 for corners with no crop
             Glide.with(context)
@@ -89,6 +92,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                     //.centerCrop() // scale image to fill the entire ImageView
                     .transform(new RoundedCornersTransformation(radius, margin))
                     .into(ivPoster);
+
             //"listens" for click on whole row
             container.setOnClickListener(new View.OnClickListener() {
                 @Override

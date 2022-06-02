@@ -1,5 +1,6 @@
 package com.example.flixster_ta;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         //returns JSON data!
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(NOW_PLAYING_URL, new JsonHttpResponseHandler() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON json) {
                 //debugging techniques: log statements (logcat) and breakpoints (execution of prgm stops when breakpoint is set, run app in DEBUG mode)
