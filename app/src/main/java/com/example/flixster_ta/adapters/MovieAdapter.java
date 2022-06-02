@@ -87,6 +87,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             int margin = 0; // crop margin, set to 0 for corners with no crop
             Glide.with(context)
                     .load(imgURL)
+                    //to load placeholders, wipe data from emulator.
+                    // the device saves the images and they are cached. we need to clear this cache.
                     //.placeholder(R.drawable.placeholder)
                     .override(120, 500)
                     //.centerCrop() // scale image to fill the entire ImageView
