@@ -4,9 +4,11 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.flixster_ta.databinding.ActivityDetailBinding;
@@ -20,6 +22,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.parceler.Parcels;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 import okhttp3.Headers;
 
 //Youtube API: https://console.developers.google.com/
@@ -38,7 +41,7 @@ public class DetailActivity extends YouTubeBaseActivity {
     TextView tvOverview;
     RatingBar ratingBar;
     YouTubePlayerView youTubePlayerView;
-    private ActivityDetailBinding binding;
+    ImageView ivPoster;
 
     @SuppressLint("DefaultLocale")
     @Override
@@ -46,7 +49,7 @@ public class DetailActivity extends YouTubeBaseActivity {
         super.onCreate(savedInstanceState);
 
         //view binding
-        binding = ActivityDetailBinding.inflate(getLayoutInflater());
+        com.example.flixster_ta.databinding.ActivityDetailBinding binding = ActivityDetailBinding.inflate(getLayoutInflater());
 
         //layout of activity is stored in a special property called root
         View view = binding.getRoot();

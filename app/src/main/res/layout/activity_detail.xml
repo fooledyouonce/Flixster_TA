@@ -9,7 +9,6 @@
     android:orientation="vertical"
     android:background="@color/grey">
 
-
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/player"
         android:layout_width="match_parent"
